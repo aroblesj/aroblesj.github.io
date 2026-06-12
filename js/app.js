@@ -1,7 +1,7 @@
 import Header from './components/Header.js?v=58';
 import Hero from './components/Hero.js';
 import Skills from './components/Skills.js';
-import Projects from './components/Projects.js';
+import Projects from './components/Projects.js?v=2';
 import Contact from './components/Contact.js';
 import { initThemeToggle } from './components/ThemeToggle.js';
 

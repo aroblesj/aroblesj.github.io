@@ -22,10 +22,8 @@ export default function Projects() {
 
       <!-- Project 02 -->
       <div class="project-item">
-        <div class="project-graphic">
-          <div class="project-graphic-placeholder" id="p2-graphic">
-            &lt; Modular Fitness Application /&gt;
-          </div>
+        <div class="project-graphic project-graphic-image" style="aspect-ratio: 2560/2270 !important;">
+          <img src="assets/fitness_preview.png" alt="Modular Fitness Application Preview" class="project-img" />
           <div class="project-badge-container">
             <div class="project-badge-ribbon">Under Development</div>
           </div>
