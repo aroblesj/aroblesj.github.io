@@ -297,19 +297,21 @@ h1, h2, h3, p, a, span, button, input, textarea {
   transition: var(--transition-smooth);
 }
 
-/* Hover effects for vector logo */
-.header-avatar-wrapper:hover .brand-logo-svg {
-  transform: rotate(5deg) scale(1.08);
-}
+/* Hover effects for vector logo - wrapped to prevent sticky states on touchscreens */
+@media (hover: hover) {
+  .header-avatar-wrapper:hover .brand-logo-svg {
+    transform: rotate(5deg) scale(1.08);
+  }
 
-.header-avatar-wrapper:hover .logo-frame {
-  stroke: var(--accent-cyan);
-  filter: drop-shadow(0 0 4px rgba(56, 189, 248, 0.6));
-}
+  .header-avatar-wrapper:hover .logo-frame {
+    stroke: var(--accent-cyan);
+    filter: drop-shadow(0 0 4px rgba(56, 189, 248, 0.6));
+  }
 
-.header-avatar-wrapper:hover .logo-text {
-  fill: var(--accent-cyan);
-  filter: drop-shadow(0 0 3px rgba(56, 189, 248, 0.8));
+  .header-avatar-wrapper:hover .logo-text {
+    fill: var(--accent-cyan);
+    filter: drop-shadow(0 0 3px rgba(56, 189, 248, 0.8));
+  }
 }
 
 .nav-links {
@@ -1406,6 +1408,24 @@ h2.section-heading span {
    Media Queries & Responsiveness
    ========================================================================== */
 @media (max-width: 1024px) {
+  html, body {
+    overflow: auto !important;
+    height: auto !important;
+  }
+  #site-main {
+    height: auto !important;
+    transform: none !important;
+  }
+  .section-container {
+    height: auto !important;
+    min-height: 100vh !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 100px 1.5rem 60px 1.5rem !important;
+  }
+  .scroll-indicator {
+    display: none !important;
+  }
   .hero-title {
     font-size: 3.25rem;
   }
@@ -1415,6 +1435,14 @@ h2.section-heading span {
   .hero-image-area {
     width: 280px;
     height: 280px;
+  }
+  .project-item, .project-item:nth-child(even) {
+    flex-direction: column !important;
+    gap: 2.5rem;
+    text-align: center;
+  }
+  .project-graphic {
+    margin: 0 auto;
   }
 }
 

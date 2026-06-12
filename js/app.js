@@ -1,7 +1,7 @@
-import Header from './components/Header.js?v=58';
+import Header from './components/Header.js';
 import Hero from './components/Hero.js';
 import Skills from './components/Skills.js';
-import Projects from './components/Projects.js?v=2';
+import Projects from './components/Projects.js';
 import Contact from './components/Contact.js';
 import { initThemeToggle } from './components/ThemeToggle.js';
 
@@ -116,6 +116,7 @@ function initScrollIndicator() {
 
   // 1. Physics Scroll & Swipe Force Injection
   window.addEventListener('wheel', (e) => {
+    if (window.innerWidth <= 1024) return; // Allow natural browser scrolling on mobile/tablet
     e.preventDefault();
 
     // Prevent double-triggering during the initial snap phase (cooldown)
@@ -148,10 +149,12 @@ function initScrollIndicator() {
   // 2. Mobile Swipe Gesture Snapping
   let touchStartY = 0;
   window.addEventListener('touchstart', (e) => {
+    if (window.innerWidth <= 1024) return; // Allow natural touch swiping on mobile/tablet
     touchStartY = e.touches[0].clientY;
   }, { passive: true });
 
   window.addEventListener('touchmove', (e) => {
+    if (window.innerWidth <= 1024) return; // Allow natural touch swiping on mobile/tablet
     const touchEndY = e.touches[0].clientY;
     const diffY = touchStartY - touchEndY;
 
@@ -168,12 +171,34 @@ function initScrollIndicator() {
 
   // 3. Accessibility Keyboard Snapping
   window.addEventListener('keydown', (e) => {
+    if (window.innerWidth <= 1024) return; // Allow natural key navigation on mobile/tablet
     if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') {
       e.preventDefault();
       goToSection(activeSectionIndex + 1);
     } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
       e.preventDefault();
       goToSection(activeSectionIndex - 1);
+    }
+  });
+
+  // 4. Update navbar highlight dynamically on manual mobile/tablet scroll
+  window.addEventListener('scroll', () => {
+    if (window.innerWidth > 1024) return;
+    const scrollPosition = window.scrollY + 100; // Offset for sticky navbar height
+
+    for (let i = 0; i < sectionIds.length; i++) {
+      const element = document.getElementById(sectionIds[i]);
+      if (element) {
+        const top = element.offsetTop;
+        const height = element.offsetHeight;
+        if (scrollPosition >= top && scrollPosition < top + height) {
+          if (activeSectionIndex !== i) {
+            activeSectionIndex = i;
+            updateUIForSection(i);
+          }
+          break;
+        }
+      }
     }
   });
 
@@ -188,17 +213,47 @@ function goToSection(index) {
   if (index < 0 || index >= numSections) return;
 
   activeSectionIndex = index;
-  const vh = window.innerHeight;
-  targetSnapY = activeSectionIndex * vh;
   lastTransitionTime = Date.now();
   
   updateUIForSection(activeSectionIndex);
+
+  if (window.innerWidth <= 1024) {
+    const element = document.getElementById(sectionIds[index]);
+    if (element) {
+      // Offset scrolling slightly to account for the sticky navbar
+      const navbarOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - navbarOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+    return;
+  }
+
+  const vh = window.innerHeight;
+  targetSnapY = activeSectionIndex * vh;
 }
 
 /**
  * Recalculate coordinates and adjust views on browser window resize
  */
 window.addEventListener('resize', () => {
+  if (window.innerWidth <= 1024) {
+    const main = document.getElementById('site-main');
+    if (main) {
+      main.style.transform = 'none';
+    }
+    return;
+  }
+  
+  // Reset scroll position when returning to desktop mode
+  if (window.scrollY !== 0) {
+    window.scrollTo(0, 0);
+  }
+  
   const vh = window.innerHeight;
   y = activeSectionIndex * vh;
   targetSnapY = null;
@@ -284,6 +339,15 @@ function updateArrowsForIndex(index) {
  */
 function startPhysicsLoop() {
   function animate() {
+    if (window.innerWidth <= 1024) {
+      const main = document.getElementById('site-main');
+      if (main && main.style.transform !== 'none') {
+        main.style.transform = 'none';
+      }
+      requestAnimationFrame(animate);
+      return;
+    }
+
     const vh = window.innerHeight;
 
     if (targetSnapY !== null) {
