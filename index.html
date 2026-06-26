@@ -12,20 +12,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Custom Design System Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=1.2">
 </head>
 <body>
-  <!-- Invisible SVG filter for grid displacement/warp -->
-  <svg style="position: absolute; width: 0; height: 0; pointer-events: none;" aria-hidden="true">
-    <filter id="grid-displacement">
-      <!-- Load displacement map at 512x512 tile size -->
-      <feImage href="assets/paper_normal.png" result="tile" width="512" height="512" />
-      <!-- Tile it across the entire filter region -->
-      <feTile in="tile" result="normalMap" />
-      <!-- Displace the gridlines based on R (horizontal) and G (vertical) channels -->
-      <feDisplacementMap in="SourceGraphic" in2="normalMap" scale="5" xChannelSelector="R" yChannelSelector="G" />
-    </filter>
-  </svg>
+
 
   <!-- Simple background grid -->
   <div class="bg-grid"></div>

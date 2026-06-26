@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initScrollIndicator();
   initProjectLightbox();
+  initSkillsDashboard();
 
   // 3. Handle initial hash routing
   const hash = window.location.hash;
@@ -429,3 +430,37 @@ function initProjectLightbox() {
     }
   });
 }
+
+/**
+ * Interactive Tabbed Dashboard Manager for the Skills Section
+ */
+function initSkillsDashboard() {
+  const tabs = document.querySelectorAll('.skills-tab-btn');
+  const panels = document.querySelectorAll('.skills-panel-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', (e) => {
+      e.stopPropagation(); // Avoid triggering page snap on tab clicks
+      
+      const targetTab = tab.getAttribute('data-tab');
+
+      // Update active states on tab buttons
+      tabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      // Update active states on panels
+      panels.forEach(panel => {
+        if (panel.id === `pane-${targetTab}`) {
+          panel.classList.add('active');
+        } else {
+          panel.classList.remove('active');
+        }
+      });
+    });
+  });
+}
+

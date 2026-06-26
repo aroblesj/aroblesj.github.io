@@ -12,9 +12,7 @@ export default function Projects() {
           <span class="project-number">Project 01</span>
           <h3 class="project-title" id="p1-title">Real Estate Price Estimator</h3>
           <p class="project-description">
-            Built and deployed a Streamlit web application to analyze housing market trends and provide automated property valuations. 
-            Utilized Pandas for cleaning, preprocessing, and feature engineering, and trained a Scikit-learn Random Forest regression model 
-            for real-time price predictions.
+            Engineered a CRISP-DM data pipeline to ingest, clean, and deduplicate a dataset of 1M+ real estate records, capping outliers and executing Target Mean Encoding. Trained a Random Forest Regressor (R-squared of 0.6873, MAE of ~$91,260) and deployed it via an interactive Streamlit dashboard using Plotly and serialized Joblib model binaries.
           </p>
 
         </div>
@@ -32,9 +30,7 @@ export default function Projects() {
           <span class="project-number">Project 02</span>
           <h3 class="project-title" id="p2-title">Modular Fitness Application</h3>
           <p class="project-description">
-            A centralized fitness engine designed to calculate custom nutritional requirements (calories and macronutrient splits), 
-            compute 1RM (one-rep max) percentages, and suggest training protocols. Built with a Python FastAPI backend and SQL database 
-            integrated with a decoupled frontend architecture.
+            Designed a normalized relational database schema utilizing SQLAlchemy (ORM) to enforce strict constraints and safely track state. Built a high-performance RESTful API using FastAPI and Pydantic validation schemas to sanitize network data inputs, and deployed the containerized infrastructure to AWS (EC2).
           </p>
 
         </div>
