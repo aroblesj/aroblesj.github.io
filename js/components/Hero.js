@@ -12,7 +12,7 @@ export default function Hero() {
         </h2>
 
         <p class="hero-tagline">
-          Computer Science graduate with a technical background in software development, data systems, and systems support.  My experience includes working on backend application logic, collaborating with databases, and troubleshooting core infrastructure to deliver reliable and secure digital solutions.
+          Computer Science graduate with a technical background in software development, data systems, and systems support. My experience includes working on backend application logic, collaborating with databases, and troubleshooting core infrastructure to deliver reliable and secure digital solutions.
         </p>
         <a href="#projects" class="hero-btn" id="hero-cta-btn">Explore My Work</a>
       </div>
