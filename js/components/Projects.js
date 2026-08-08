@@ -3,36 +3,33 @@ export default function Projects() {
     <h2 class="section-heading"><span>03.</span> Featured Projects</h2>
     <div class="projects-list">
       
-      <!-- Project 01 -->
+      <!-- Project 01: Fitness & Nutrition Application -->
       <div class="project-item">
         <div class="project-graphic project-graphic-image">
-          <img src="assets/real_estate_preview.png" alt="Real Estate Price Estimator Preview" class="project-img" />
+          <img src="assets/fitness_preview.png" alt="Fitness & Nutrition Application Preview" class="project-img" />
         </div>
         <div class="project-content">
           <span class="project-number">Project 01</span>
-          <h3 class="project-title" id="p1-title">Real Estate Price Estimator</h3>
+          <h3 class="project-title" id="p1-title">Fitness &amp; Nutrition Application</h3>
+          <p class="project-tech-stack"><strong>Tech Stack:</strong> Python, FastAPI, Pydantic, SQLAlchemy, GCP, AWS, venv</p>
           <p class="project-description">
-            Engineered a CRISP-DM data pipeline to ingest, clean, and deduplicate a dataset of 1M+ real estate records, capping outliers and executing Target Mean Encoding. Trained a Random Forest Regressor (R-squared of 0.6873, MAE of ~$91,260) and deployed it via an interactive Streamlit dashboard using Plotly and serialized Joblib model binaries.
+            Engineered a high-performance RESTful API using FastAPI and Pydantic validation schemas to sanitize and isolate data inputs at network boundaries. Designed a normalized RDBMS schema via SQLAlchemy (ORM) with strict foreign keys, configured cloud infrastructure on GCP/AWS, and managed isolated environments (venv).
           </p>
-
         </div>
       </div>
 
-      <!-- Project 02 -->
+      <!-- Project 02: Real Estate Data Analysis & Predictive Modeling -->
       <div class="project-item">
-        <div class="project-graphic project-graphic-image" style="aspect-ratio: 2560/2270 !important;">
-          <img src="assets/fitness_preview.png" alt="Modular Fitness Application Preview" class="project-img" />
-          <div class="project-badge-container">
-            <div class="project-badge-ribbon">Under Development</div>
-          </div>
+        <div class="project-graphic project-graphic-image">
+          <img src="assets/real_estate_preview.png" alt="Real Estate Data Analysis Preview" class="project-img" />
         </div>
         <div class="project-content">
           <span class="project-number">Project 02</span>
-          <h3 class="project-title" id="p2-title">Modular Fitness Application</h3>
+          <h3 class="project-title" id="p2-title">Real Estate Data Analysis &amp; Modeling</h3>
+          <p class="project-tech-stack"><strong>Tech Stack:</strong> Python, Scikit-learn, Streamlit, Plotly, Joblib, Pandas</p>
           <p class="project-description">
-            Designed a normalized relational database schema utilizing SQLAlchemy (ORM) to enforce strict constraints and safely track state. Built a high-performance RESTful API using FastAPI and Pydantic validation schemas to sanitize network data inputs, and deployed the containerized infrastructure to AWS (EC2).
+            Engineered a CRISP-DM pipeline ingesting and deduplicating 1M+ national real estate records. Trained and tuned a Random Forest Regressor (80/20 split, R² = 0.6873, MAE ≈ $91k). Built an interactive Streamlit and Plotly dashboard utilizing serialized Joblib model binaries for real-time property valuations.
           </p>
-
         </div>
       </div>
 
