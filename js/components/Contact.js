@@ -4,7 +4,7 @@ export default function Contact() {
       <span class="contact-pretitle">04. What's Next?</span>
       <h2 class="contact-title">Let's Connect</h2>
       <p class="contact-desc">
-        Based in Sun Valley, CA (Greater Los Angeles area). Open to technical opportunities across 
+        Based in Los Angeles, CA. Open to technical opportunities across 
         <strong>Software Development</strong>, <strong>Data Engineering &amp; Database Management</strong>, 
         and <strong>Systems Administration</strong>.
       </p>
@@ -24,7 +24,7 @@ export default function Contact() {
     <!-- Clean, integrated footer at the bottom of the section -->
     <footer class="site-footer-content">
       <div class="footer-copy">
-        &copy; ${new Date().getFullYear()} Adrian Robles Jr. &bull; Sun Valley, CA
+        &copy; ${new Date().getFullYear()} Adrian Robles Jr. &bull; Los Angeles, CA
       </div>
       <div class="footer-tech">
         Built with clean <span>ES Modules</span> &amp; <span>Vanilla CSS</span>.

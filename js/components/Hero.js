@@ -4,7 +4,7 @@ export default function Hero() {
       <!-- Left Column: Primary Headline & 3 Stacked Roles with Periods -->
       <div class="hero-content">
         <p class="hero-pretitle">01. Hi, my name is</p>
-        <h1 class="hero-title">Adrian Robles Jr.</h1>
+        <h1 class="hero-title">Adrian Robles</h1>
         <h2 class="hero-subtitle">
           Software Development.<br>
           Data Engineering.<br>

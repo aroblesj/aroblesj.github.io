@@ -13,11 +13,11 @@ export default function Header() {
               </defs>
               <path class="logo-frame" d="M50 8 L86 29 L86 71 L50 92 L14 71 L14 29 Z" fill="none" stroke="url(#logo-grad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
               <path class="logo-frame-inner" d="M50 18 L77 34 L77 66 L50 82 L23 66 L23 34 Z" fill="none" stroke="url(#logo-grad)" stroke-width="1.5" opacity="0.35" stroke-linecap="round" stroke-linejoin="round" />
-              <text x="50" y="60" class="logo-text" font-family="'Outfit', sans-serif" font-weight="700" font-size="28" fill="url(#logo-grad)" text-anchor="middle" letter-spacing="0.5">ARJ</text>
+              <text x="50" y="60" class="logo-text" font-family="'Outfit', sans-serif" font-weight="700" font-size="28" fill="url(#logo-grad)" text-anchor="middle" letter-spacing="0.5">AR</text>
             </svg>
           </div>
 
-          <a href="#home" class="logo" id="nav-logo">Adrian Robles Jr<span>.</span></a>
+          <a href="#home" class="logo" id="nav-logo">Adrian Robles</a>
         </div>
 
         <button class="mobile-toggle" id="mobile-menu-btn" aria-label="Toggle Menu">

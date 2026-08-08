@@ -4,7 +4,11 @@ export default function Skills() {
     <div class="skills-dashboard">
       <!-- Tabs Navigation -->
       <div class="skills-tabs">
-        <button class="skills-tab-btn active" data-tab="languages" aria-selected="true" role="tab">
+        <button class="skills-tab-btn active" data-tab="education" aria-selected="true" role="tab">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          <span>Education &amp; Certs</span>
+        </button>
+        <button class="skills-tab-btn" data-tab="languages" aria-selected="false" role="tab">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
           <span>Software Development</span>
         </button>
@@ -20,16 +24,38 @@ export default function Skills() {
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
           <span>Operations &amp; Compliance</span>
         </button>
-        <button class="skills-tab-btn" data-tab="education" aria-selected="false" role="tab">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-          <span>Education &amp; Certs</span>
-        </button>
       </div>
 
       <!-- Display Panel -->
       <div class="skills-panel glass-card">
+        <!-- Education & Certifications Panel -->
+        <div class="skills-panel-content active" id="pane-education" role="tabpanel">
+          <div class="panel-header">
+            <div class="skill-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <h3>Education &amp; Certifications</h3>
+          </div>
+          <p class="panel-description">Academic degree and professional certifications.</p>
+          
+          <!-- Academic Degree Highlight -->
+          <div class="education-degree-card">
+            <h4 class="degree-title">B.S. Computer Science</h4>
+            <p class="degree-institution">Western Governors University &bull; <span>2024 &ndash; 2026</span></p>
+          </div>
+
+          <!-- Secondary IT & Framework Certifications -->
+          <div class="certifications-section">
+            <h5 class="certs-subtitle">Accredited Certifications</h5>
+            <div class="skill-tags">
+              <span class="skill-tag cert-tag">Linux Essentials &bull; LPI</span>
+              <span class="skill-tag cert-tag">ITIL 4 Foundation &bull; Axelos ITSM Framework</span>
+            </div>
+          </div>
+        </div>
+
         <!-- Software Development Panel -->
-        <div class="skills-panel-content active" id="pane-languages" role="tabpanel">
+        <div class="skills-panel-content" id="pane-languages" role="tabpanel">
           <div class="panel-header">
             <div class="skill-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
@@ -105,32 +131,6 @@ export default function Skills() {
             <span class="skill-tag">PACS/RIS Networks</span>
             <span class="skill-tag">HIPAA Regulations</span>
             <span class="skill-tag">Identity &amp; Access Management (IAM)</span>
-          </div>
-        </div>
-
-        <!-- Education & Certifications Panel -->
-        <div class="skills-panel-content" id="pane-education" role="tabpanel">
-          <div class="panel-header">
-            <div class="skill-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-            </div>
-            <h3>Education &amp; Certifications</h3>
-          </div>
-          <p class="panel-description">Academic degree and professional IT/Linux framework certifications.</p>
-          
-          <!-- Academic Degree Highlight -->
-          <div class="education-degree-card">
-            <h4 class="degree-title">B.S. Computer Science</h4>
-            <p class="degree-institution">Western Governors University &bull; <span>2024 &ndash; 2026</span></p>
-          </div>
-
-          <!-- Secondary IT & Framework Certifications -->
-          <div class="certifications-section">
-            <h5 class="certs-subtitle">Accredited Certifications</h5>
-            <div class="skill-tags">
-              <span class="skill-tag cert-tag">Linux Essentials &bull; LPI</span>
-              <span class="skill-tag cert-tag">ITIL 4 Foundation &bull; Axelos ITSM Framework</span>
-            </div>
           </div>
         </div>
       </div>
